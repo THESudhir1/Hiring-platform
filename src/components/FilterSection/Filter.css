@@ -1,0 +1,100 @@
+
+
+.filter-section {
+    width: 25%;
+    height: 100%;
+    padding: 16px;
+    margin: 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-group input {
+    margin-right: 5px;
+}
+
+.preferences-section {
+    display: block; 
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="range"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="range"] {
+    width: calc(100% - 16px); 
+}
+
+.salary-output {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.clear-all,
+.search {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.clear-all {
+    background-color: #007bff;
+}
+
+.clear-all:hover,
+.search:hover {
+    opacity: 0.8;
+}
+
+span {
+    margin: 0 10px;
+}
+
+output {
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+}

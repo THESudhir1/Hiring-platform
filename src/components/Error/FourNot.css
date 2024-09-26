@@ -1,0 +1,61 @@
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;
+}
+
+h1 {
+    font-size: 4em;
+    color: #555; 
+    margin: 0;
+}
+h3{
+    font-size: 2em;
+    color: #555; 
+}
+p {
+    font-size: 1.2em;
+   
+}
+
+.error-code {
+    font-size: 20rem;
+    font-weight: bold;
+    color: #555;
+    
+    text-shadow: -1px -5px 5px #555;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #0bb761; 
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.Server{
+    font-size: 2rem;
+    
+   
+}
+
+
+.error-container {
+    display: flex;
+    align-items: center;
+}
+
+
