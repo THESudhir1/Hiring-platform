@@ -1,17 +1,17 @@
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet} from 'react-router-dom';
 import Sidebar from './DashNav';
 
 const Layout = () => {
   return (
     <div className="flex mt-16 h-screen">
       {/* Left side static menu */}
-      <div className="w-1/3 bg-green-700">
+      <div className="w-1/4 bg-gray-700">
         <Sidebar />
       </div>
 
       {/* Right side changing content */}
-      <div className="w-2/3 overflow-y-auto">
+      <div className="w-3/4 overflow-y-auto">
         <Outlet />
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
@@ -55,7 +55,7 @@ const Footer = () => {
       handleScrollToTop();
     }
   return (
-    <footer className="bg-green-700 text-white py-8 shadow-lg">
+    <footer className="bg-gray-800 text-white py-10 shadow-lg">
 
       <div className="flex justify-around">
 
@@ -102,19 +102,19 @@ const Footer = () => {
             <div className="flex space-x-2 gap-2 mb-8">
 
               <Link to="About">
-                <img src={require('../../assets/Images/FooterImg/twitteric-2.png')} alt="Twitter Icon" className="h-10 w-10"/>
+                <img src={require('../../assets/Images/FooterImg/twitteric-2.png')} alt="Twitter Icon" className="h-10 w-10 transition-transform duration-300 hover:-translate-y-2"/>
               </Link>
 
               <Link to="About">
-                <img src={require('../../assets/Images/FooterImg/twitteric-2.png')} alt="Twitter Icon" className="h-10 w-10"/>
+                <img src={require('../../assets/Images/FooterImg/twitteric-2.png')} alt="Twitter Icon" className="h-10 w-10 transition-transform duration-300 hover:-translate-y-2"/>
               </Link>
 
               <Link to="About">
-                <img src={require('../../assets/Images/FooterImg/twitteric-2.png')} alt="Twitter Icon" className="h-10 w-10"/>
+                <img src={require('../../assets/Images/FooterImg/twitteric-2.png')} alt="Twitter Icon" className="h-10 w-10 transition-transform duration-300 hover:-translate-y-2"/>
               </Link>
 
               <Link to="About">
-                <img src={require('../../assets/Images/FooterImg/instaic-2.png')} alt="Twitter Icon" className="h-10 w-10"/>
+                <img src={require('../../assets/Images/FooterImg/instaic-2.png')} alt="Twitter Icon" className="h-10 w-10 transition-transform duration-300 hover:-translate-y-2"/>
               </Link>
 
             </div> 

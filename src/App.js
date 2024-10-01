@@ -18,6 +18,26 @@ import DashLayout from "./components/Dashboard/DashLayout";
 import DashAppliedJobs from "./components/Dashboard/OutletComponent/DashAppliedJobs";
 import BuildResume from "./components/Dashboard/OutletComponent/DashBuildResume";
 import Profile from "./components/Dashboard/OutletComponent/DashProfile";
+import ExperienceSection from "./components/Dashboard/OutletComponent/DashExperience";
+import EducationSection from "./components/Dashboard/OutletComponent/DashEducation";
+import AddExperience from './components/Dashboard/OutletComponent/AddNewExperience';
+import AddEducation from './components/Dashboard/OutletComponent/AddNewEducation';
+import SkillComponent from './components/Dashboard/OutletComponent/DashSkill';
+import AddSkill from './components/Dashboard/OutletComponent/AddNewSkills';
+import LanguageComponent from './components/Dashboard/OutletComponent/DashLanguage';
+import AddLanguage from './components/Dashboard/OutletComponent/AddNewLanguage';
+import ProfileEdit from './components/Dashboard/OutletComponent/DashEditProfile';
+import Notification from './components/Dashboard/DashNotify';
+import ApplicantProfilePage from './components/Dashboard/OutletComponent/Applicantprofile';
+import CompanyProfilePage from './components/Dashboard/OutletComponent/CompanyProfile';
+import EditCompanyProfilePage from './components/Dashboard/OutletComponent/EditCompanyProfile';
+import CertificationSection from './components/Dashboard/OutletComponent/DashCertification';
+import AddCertification from './components/Dashboard/OutletComponent/AddNewCertificates';
+import AwardSection from './components/Dashboard/OutletComponent/DashAccomplishment';
+import AddAward from './components/Dashboard/OutletComponent/Addaccomplishment';
+import WelcomeSection from './components/Dashboard/OutletComponent/WelcomeProfile';
+import CompanyProfile from './components/Dashboard/OutletComponent/DashCompanyprofile';
+import ResumeUpload from './components/ui/UploadResume';
  
 
 function App() {
@@ -67,12 +87,32 @@ function App() {
           <Route path = "/contactform" element = {<ContactForm />} />
           <Route path = "/jobs" element = {<Job/>} />
           <Route path = "/job/:id" element = {<JobDetails Jobdata={Jobdata} />} />
+          <Route path = "/edit-profile" element = {<ProfileEdit />} />
+          <Route path = "/editcompanyprofile" element = {<EditCompanyProfilePage />} />
+          <Route path='/applicantprofile' element={<ApplicantProfilePage />} />
+          <Route path='/companyprofile' element={<CompanyProfilePage />} />
+          <Route path='/uploadresume' element={<ResumeUpload />} />
+          <Route path = "/notifications" element = {<Notification />} />
           <Route path="/dashboard" element={<DashLayout />}>
+              <Route path="welcome" element={<WelcomeSection />} />
               {/* These will render inside the <Outlet /> in DashLayout */}
+              <Route path='companyprofile' element={<CompanyProfile />} />
               <Route path="applied-jobs" element={<DashAppliedJobs />} />
               {/* <Route path="experience" element={<DashExperience />} /> */}
               <Route path="build-resume" element={<BuildResume />} />
               <Route path="profile" element={<Profile />} />
+              <Route path="experience" element={<ExperienceSection />} />
+              <Route path="education" element={<EducationSection />} />
+              <Route path="newexperience" element={<AddExperience />} /> 
+              <Route path="neweducation" element={<AddEducation />} />
+              <Route path="skills" element={<SkillComponent />} />
+              <Route path="newskills" element={<AddSkill />} />
+              <Route path="languages" element={<LanguageComponent />} />
+              <Route path="newlanguage" element={<AddLanguage />} />
+              <Route path="certificate" element={<CertificationSection />} />
+              <Route path="newcertificate" element={<AddCertification />} />
+              <Route path="awards" element={<AwardSection />} />
+              <Route path="newawards" element={<AddAward />} />
               {/* Add more child routes here */}
             </Route>
         </Routes>

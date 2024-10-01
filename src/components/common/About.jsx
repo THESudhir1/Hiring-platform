@@ -1,6 +1,7 @@
 import React from "react";
-import AbouCard from "../ui/AbouCard";
-
+import AbouCard from "../Cards/AboutCard";
+import Team from "../ui/TeamMember";
+import Aboutbg from "../../assets/Images/main.png";
 const card = [
   {
     title: "AI-Powered Interviews",
@@ -8,7 +9,6 @@ const card = [
     description:
       "Candidates engage in a dynamic interview experience where AI presents questions in both text and video formats. They respond by speaking or typing, allowing them to express their skills, personality, and creativity in a flexible environment.",
   },
-
   {
     title: "Smart Score Evaluation",
     companyLogo: "/images/interview.png",
@@ -24,7 +24,6 @@ const card = [
   {
     title: "Recruiter Selection",
     companyLogo: "/images/interview.png",
-
     description:
       "Recruiters receive scores and insights to choose candidates for the next round. This streamlined process helps them focus on top talent efficiently.",
   },
@@ -32,30 +31,25 @@ const card = [
 
 export const About = () => {
   return (
-    <div className="mt-14">
-
-          {/* main image */}
+    <div>
+      {/* Main image */}
       <div>
         <img
-          src={require("../../assets/Images/main.png")}
+          src={Aboutbg}
           alt="main"
-          className="object-cover w-full h-auto "
+          className="bg-cover bg-center w-full h-auto mt-12"
         />
       </div>
 
-      <div className="w-[70%] mx-auto">
-
-        {/*  for main heading and something  */}
-
+      <div className="w-[80%] mx-auto mt-2 p-2">
+        {/* Main heading */}
         <div className="p-2">
-          <h1 className="text-center text-5xl font-semibold">Our vision</h1>
-
-          <h3 className="text-center font-semibold opacity-90 mt-2">
+          <h1 className="text-center text-5xl font-semibold text-green-700">Our vision</h1>
+          <h3 className="text-center font-normal opacity-80 mt-2">
             At Demo, we envision a future where technology and talent converge
             to redefine the hiring process.
           </h3>
-
-          <p className="mt-5 text-center leading-7">
+          <p className="mt-5 text-center leading-7 opacity-70">
             We believe in simplifying connections and recognizing potential. Our
             platform enables candidates to showcase their talents while
             providing recruiters with streamlined insights for informed
@@ -66,17 +60,16 @@ export const About = () => {
           </p>
         </div>
 
-        {/*  for cards */}
-
-        <div className="grid grid-cols-2 gap-2 ">
+        {/* Cards */}
+        <div className="flex flex-col gap-12">
           {card.map((card, index) => (
-            <AbouCard key={index} card={card} />
+            <AbouCard key={index} card={card} reverse={index % 2 !== 0} />
           ))}
         </div>
 
+        
       </div>
-
-
+        <Team/>
     </div>
   );
 };

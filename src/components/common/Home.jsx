@@ -65,11 +65,16 @@ const Home = () => {
     }
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
+
   // Function for handling the "Scan your Resume" button click
   const handleScanClick = () => {
     if (isLoggedIn) {
-        // navigate("/login");
-        alert("Abhi Resume scan page ready nahi hai");
+        navigate("/uploadresume");
+        handleScrollToTop();
+        // alert("Abhi Resume scan page ready nahi hai");
     } else {
       navigate("/login");
       alert("Please log in first.");
@@ -78,12 +83,12 @@ const Home = () => {
 
   return (
     <div className="w-full relative opacity-90">
-      <div className="absolute w-full h-screen z-10">
+      <div className="absolute w-full h-screen z-10 bg-cover bg-center">
         {/* Background Image */}
         <img
           src={Bghome}
           alt="Background"
-          className="absolute max-w-full max-h-full object-contain p-12"
+          className="absolute max-w-full max-h-full  p-12"
         />
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center mt-12">
@@ -287,7 +292,7 @@ const Home = () => {
 
 
       {/* Newsletter section */}
-      <div>NEWS LETTER SECTION</div>
+      <div className="bg-green-700 h-20">NEWS LETTER SECTION</div>
       
     </div>
   );

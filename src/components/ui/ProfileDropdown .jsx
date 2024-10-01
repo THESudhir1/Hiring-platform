@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import profileimg from "../../assets/Images/profileimg.jpg";
 
@@ -6,6 +6,7 @@ const ProfileDropdown = ({ handleLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [profilePicture, setprofilePicture] = useState(true);
   const navigate = useNavigate();
+  const shareRef = useRef(null);
 
   // Toggle the dropdown menu
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -22,8 +23,23 @@ const ProfileDropdown = ({ handleLogout }) => {
     // navigate("/"); // Redirect to the home page after logout
   };
 
+  // Close dropdown when clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (shareRef.current && !shareRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [shareRef]);
+
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left" ref={shareRef}>
       {/* Profile Button */}
       <button
         onClick={toggleDropdown}
@@ -61,7 +77,7 @@ const ProfileDropdown = ({ handleLogout }) => {
         <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
           <div className="py-1">
             <Link
-              to="/dashboard"
+              to="/dashboard/welcome"
               className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-500 transition-colors duration-300"
               onClick={() => setIsOpen(false)}
             >

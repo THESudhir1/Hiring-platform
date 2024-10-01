@@ -9,13 +9,8 @@ const Profile = () => {
     // const userRole = "employee"; // Change this to 'employer' for testing
   
       // Function for handling the "Find Jobs" button click
-      const handleFindJobsClick = () => {
-        if (isLoggedIn) {
-            navigate("/dashboard/edit-profile");
-        } else {
-          navigate("/login");
-          alert("Please log in first.");
-        }
+      const handleEditClick = () => {
+        navigate("/edit-profile");
       };
 
 
@@ -65,8 +60,11 @@ const Profile = () => {
       </section>
 
       <div>
+        <div className='flex justify-center items-center'>
+          <p className="text-xs font-light"><span className="text-xl text-red-700 font-extrabold">*</span>It is basic overview, If you want your profile as Employer. Please go to view as Employer section</p>
+        </div>
         <button
-            onClick={handleFindJobsClick}
+            onClick={handleEditClick}
             className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg 
                 hover:bg-green-700 transition-colors duration-300 shadow-md ml-[40%] mt-4"
             >
